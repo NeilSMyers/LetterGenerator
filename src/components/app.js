@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import LetterForm from './letter_form';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Letter Generator</h1>
+        <div className="background">
+          <div className="letter-heading">
+            <h1>My Letter to Santa:</h1>
+            <div className="letter-subheading">
+              Fill out the boxes below and we'll get your letter straight from the Big Guy!
+            </div>
+          </div>
+        </div>
+        <LetterForm/>
       </div>
     );
   }
 }
+
+
+// Connecting Form Data to the Madlib Generation Process
