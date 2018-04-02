@@ -18,6 +18,3 @@ export default class App extends Component {
     );
   }
 }
-
-
-// Connecting Form Data to the Madlib Generation Process

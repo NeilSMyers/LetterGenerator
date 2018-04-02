@@ -4,8 +4,9 @@ import {
   Row,
   Card
 }from 'reactstrap';
-
 import _ from 'lodash';
+
+import LetterContent from './letter_content';
 
 function LetterInput(props) {
   return (
@@ -23,6 +24,7 @@ class LetterForm extends Component {
     super(props)
 
     this.state = {
+      completedForm: false,
       name: '',
       presentOne: '',
       presentTwo: '',
@@ -40,6 +42,31 @@ class LetterForm extends Component {
     }.bind(this);
   }
 
+  handleSubmit = function(event) {
+    this.setState({completedForm: true});
+    event.preventDefault();
+  }.bind(this);
+
+  handleClick = function() {
+    this.setState({
+      completedForm: false,
+      name: '',
+      presentOne: '',
+      presentTwo: '',
+      presentThree: '',
+      goodDeed: '',
+      favoriteReindeer: ''
+    })
+  }.bind(this)
+
+  renderButton = function() {
+    if(this.state.completedForm) {
+      return <a className="reset-button" onClick={this.handleClick}>Reset</a>
+    }
+    return <input type="submit" className="submit-button" value="Submit"/>
+
+  }
+
   render() {
 
       this.inputData = [
@@ -53,17 +80,23 @@ class LetterForm extends Component {
 
     return (
       <div className="card-wrapper">
-          <Row>
-            {
-              _.map(this.inputData,(data, Key) => {
-                return <LetterInput key={Key} placeholder={data.placeholder} state={data.state} prop={data.prop} onChange={this.handleChange({inputTitle: data.prop})}/>
-              })
-            }
-            <Col>
-              <input value="Submit" type="button" className="submit-button"/>
-              <a value="Reset" type="button" className="reset-button"/>
-            </Col>
-          </Row>
+          <Card>
+            <form onSubmit={this.handleSubmit} id="madlib-form">
+              <Row>
+                {
+                  _.map(this.inputData,(data, Key) => {
+                    return <LetterInput key={Key} placeholder={data.placeholder} state={data.state} prop={data.prop} onChange={this.handleChange({inputTitle: data.prop})}/>
+                  })
+                }
+              </Row>
+              <Row>
+                <Col md="12" className="button-wrapper">
+                  {this.renderButton()}
+                </Col>
+              </Row>
+            </form>
+            <LetterContent data={this.state}/>
+          </Card>
       </div>
     );
   }

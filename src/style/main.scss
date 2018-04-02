@@ -39,3 +39,16 @@
   border-radius: 10px;
   border-color: #07ba2e;
 }
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.showContent {
+  visibility: visible;
+}
+
+.hideContent {
+  visibility: hidden;
+}
