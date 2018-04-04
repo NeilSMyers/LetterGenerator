@@ -7,7 +7,7 @@ export default class App extends Component {
       <div>
         <div className="background">
           <div className="letter-heading">
-            <h1>My Letter to Santa:</h1>
+            <h1>My Letter from Santa:</h1>
             <div className="letter-subheading">
               Fill out the boxes below and we'll get your letter straight from the Big Guy!
             </div>

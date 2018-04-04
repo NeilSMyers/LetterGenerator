@@ -80,23 +80,23 @@ class LetterForm extends Component {
 
     return (
       <div className="card-wrapper">
-          <Card>
-            <form onSubmit={this.handleSubmit} id="madlib-form">
-              <Row>
-                {
-                  _.map(this.inputData,(data, Key) => {
-                    return <LetterInput key={Key} placeholder={data.placeholder} state={data.state} prop={data.prop} onChange={this.handleChange({inputTitle: data.prop})}/>
-                  })
-                }
-              </Row>
-              <Row>
-                <Col md="12" className="button-wrapper">
-                  {this.renderButton()}
-                </Col>
-              </Row>
-            </form>
-            <LetterContent data={this.state}/>
-          </Card>
+        <Card className="input-card">  
+          <form onSubmit={this.handleSubmit} id="letter-form">
+            <Row>
+              {
+                _.map(this.inputData,(data, Key) => {
+                  return <LetterInput key={Key} placeholder={data.placeholder} state={data.state} prop={data.prop} onChange={this.handleChange({inputTitle: data.prop})}/>
+                })
+              }
+            </Row>
+            <Row>
+              <Col md="12" className="button-wrapper">
+                {this.renderButton()}
+              </Col>
+            </Row>
+          </form>
+          <LetterContent data={this.state}/>
+        </Card>
       </div>
     );
   }

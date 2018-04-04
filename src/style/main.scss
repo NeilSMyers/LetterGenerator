@@ -1,9 +1,12 @@
 .background {
-  background-color: #c91818;
+  background-color: #c01a08;
   padding: 100px;
 }
 
 .letter-heading {
+  background-color: #336710;
+  padding: 10px;
+  border-radius: 10px;
   color: #fcfcfc;
   text-align: center;
   margin-top: 40px;
@@ -12,6 +15,9 @@
 
 .card-wrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 30px;
 }
 
@@ -19,25 +25,31 @@
   padding: 20px;
   width: 70vw;
   border-radius: 10px;
-  border-color: #07ba2e;
+  border-color: #336710;
   margin: 10px;
 }
 
 .submit-button {
+  background-color: #336710;
+  color: white;
   text-align: center;
-  margin-top: 50px;
   width: 20vw;
   padding: 20px;
   border-radius: 10px;
-  border-color: #c91818;
+  border-color: white;
+  border-width: 10px;
 }
 
 .reset-button {
-  margin-top: 50px;
-  width: 20vw;
+  color: white;
+  background-color: #c01a08;
+  text-align: center;
+  width: 200px;
   padding: 20px;
+  margin-top: 50px;
   border-radius: 10px;
-  border-color: #07ba2e;
+  border-color: white;
+  border-width: 10px;
 }
 
 input:focus,
@@ -51,4 +63,26 @@ button:focus {
 
 .hideContent {
   visibility: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px;
+}
+
+.input-card {
+  border-color: transparent;
+  border-radius: 10px;
+  background-image: url("http://th06.deviantart.net/fs71/PRE/f/2012/358/6/f/christmas_stripes_pattern_4_by_dabbexsahi_by_dabbex30-d5ozurd.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.content-wrapper {
+  border-width: 5px;
+  margin-top: 150px;
+  background: white;
+  
 }
